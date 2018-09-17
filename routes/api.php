@@ -145,3 +145,9 @@ Route::resource('users','User\UserController',['except'=>[
 
 Route::name('verify')->get('users/verify/{token}','User\UserController@verify');
 Route::name('resend')->get('users/{user}/resend','User\UserController@resend');
+
+/**
+ * Rutas para Laravel Passport
+ * registradas aqui para usar middleware de api
+ */
+Route::post('oauth/token', '\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');

@@ -11,6 +11,7 @@ class ApiController extends Controller
 
     public function __construct()
     {
-     
+        $this->middleware('auth:api');
+        //al enviar el guard api, passport se hará cargo comodiver principal de api
     }
 }

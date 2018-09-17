@@ -25,6 +25,17 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 //ruta principal
 Route::get('/', function () {
     return view('welcome');
-})->middleware('guest');
+})->middleware('guest'); //entra a welcome si no esta logueado
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Rutas para gestion de Accestokens
+ */
+
+Route::get('/home/my-tokens', 'HomeController@getTokens')->name('personal-tokens');
+
+Route::get('/home/my-clients', 'HomeController@getClients')->name('clients');
+
+Route::get('/home/authorized-clients', 'HomeController@getAuthorizedClients')
+                                                ->name('authorized-clients');

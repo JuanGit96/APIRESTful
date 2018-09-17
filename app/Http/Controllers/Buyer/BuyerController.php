@@ -8,6 +8,10 @@ use App\Buyer;
 
 class BuyerController extends ApiController
 {
+    public function __construct()
+    {
+        Parent::__construct();
+    }
     /**
      * Display a listing of the resource.
      *

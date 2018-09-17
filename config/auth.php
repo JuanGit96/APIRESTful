@@ -42,7 +42,13 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            //'driver' => 'token',
+            'driver' => 'passport',
+            /**
+             * Cada que se reciba una petición y esta esté siendo protegida porun middleware
+             * de auth que utilice el guard de api passport se hará cargo de esté
+             * Passport verificara exitencia y validez de accesToken y demás.
+             */
             'provider' => 'users',
         ],
     ],
